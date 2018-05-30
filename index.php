@@ -69,28 +69,69 @@
                 <h1>Sök klubb här</h1>
                
                <div id="search_form" class="search_top">
+			   
+			   
 		<h2>Sök klubb här</h2>
+		
+		
+		
 		<form action="#" method="post">
-			<input type="text" name="Enter Keyword(s)" placeholder="Enter Keyword(s)" required="">
+		
+		
+			<!--<input type="text" name="Enter Keyword(s)" placeholder="Enter Keyword(s)" required="">-->
 			<!-- <input class="email" name="Location" type="text" placeholder="Location" required=""> -->
 
-
-            <select id="country12" onchange="change_country(this.value)" class="frm-field required">
-                                                        <option value="null"> välj Ålder</option>
-                                                        <option value="city">3-9</option>
-                                                        <option value="city">10-17</option>
-                                                        <option value="city">18-30</option>
-                                                        <option value="city">30+</option>
-                                                        
+			 <select id="country12" onchange="change_country(this.value)" class="frm-field required">
+			<?php
+            
+            $mysqlserver="localhost";
+            $mysqlusername="root";
+            $mysqlpassword="";
+            $link=mysql_connect($mysqlserver, $mysqlusername, $mysqlpassword) or die ("Error connecting to mysql server: ".mysql_error());
+            
+            $dbname = 'registration_system';
+            mysql_select_db($dbname, $link) or die ("Error selecting specified database on mysql server: ".mysql_error());
+            
+            $cdquery="SELECT sports_item FROM sportstable";
+            $cdresult=mysql_query($cdquery) or die ("Query to get data from firsttable failed: ".mysql_error());
+            
+			 echo "
+				 <option> Välj Idrott</option>";
+            while ($cdrow=mysql_fetch_array($cdresult)) {
+            $sports_item=$cdrow["sports_item"];
+               
+				echo " <option>
+                    $sports_item
+                </option>";
+            
+            }
+                
+            ?>
                                         </select>
+
+            
 			<select id="country12" onchange="change_country(this.value)" class="frm-field required">
-														<option value="null"> välj område</option>
+														<option value="null"> Välj Område</option>
 														<option value="city">Stockholm</option>
 														<option value="city">Värmland</option>
 														<option value="city">Södermanland</option>
 														<option value="city">Örebro</option>
 														
 										</select>
+										
+										
+			<select id="country12" onchange="change_country(this.value)" class="frm-field required">
+                                                        <option value="null"> Välj Ålder</option>
+                                                        <option value="age">3-9</option>
+                                                        <option value="age">10-17</option>
+                                                        <option value="age">18-30</option>
+                                                        <option value="age">30+</option>
+                                                        
+                                        </select>
+										
+										
+										
+										
 			<input type="submit" value="Sök">
 			<div class="clearfix"></div>
 		</form>
@@ -149,14 +190,14 @@
         	<div class="container">
 				<h2 class="section-heading">Contact Us</h2>
 				<p><span class="glyphicon glyphicon-earphone"></span><br> +46 734 89 47 62</p>
-				<p><span class="glyphicon glyphicon-envelope"></span><br> info@example.com</p>
+				<p><span class="glyphicon glyphicon-envelope"></span><br> info@sportochidrott.com</p>
         	</div>
         </div>
         	
         <!-- Copyright etc -->
         <div class="small-print">
         	<div class="container">
-        		<p>Copyright &copy; www.example.com 2018</p>
+        		<p>Copyright &copy; www.sportochidrott.com 2018</p>
         	</div>
         </div>
         

@@ -98,7 +98,7 @@ if(empty($ClubName)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
 			</form>
 		</div>	 
 	
-<p class="copyright">&copy; 2018 stylish sign in and sign up Form. All Rights Reserved </p>
+<p class="copyright">&copy; 2018 www.sportochidrott.com. All Rights Reserved </p>
 
 </div>	
 </body>
