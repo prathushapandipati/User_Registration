@@ -24,6 +24,11 @@ p.header {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
+div#centerpage{
+	width: 500px;
+	margin: 0 auto;
+}
 div#signup-agile input[type="text"],div#signup-agile input[type="email"],div#signup-agile input[type="password"] {
 	padding: 10px;
     width: 100%;
@@ -69,7 +74,7 @@ div#signup-agile input[type="Submit"]:hover {
 	color: #000000;
 }
 
-div.message{
+div.message, div.SuccessMessage{
 	
 	border: 2px solid #c0c0c0;
 	padding-top: 1em;

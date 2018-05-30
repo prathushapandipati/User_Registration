@@ -35,9 +35,9 @@ if(empty($Username)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
 	if($Execute){
 				 $subject="Confirm Account";
 				 $body='Hi'.$Username. 'Here is the link to Active your account
-				 http://localhost/PHPCOURSE/user_registration/user_registration/Activate.php?token='.$Token;
+				 http://localhost/PHPCOURSE/User_Registration/Activate.php?token='.$Token;
 				 $SenderEmail="From:prathusha.pandipati@gmail.com";
-	 if (mail(Email, $subject, $body, $SenderEmail)) {
+	 if (mail($Email, $subject, $body, $SenderEmail)) {
 				 $_SESSION["SuccessMessage"]="Check Email for Activation";
 		         Redirect_To("Login.php");
 } else {
@@ -71,13 +71,15 @@ if(empty($Username)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
 	<body>
 <div>		
 <?php echo Message(); ?>
+<?php echo SuccessMessage(); ?>
 </div>
+<div id="centerpage">
 <div id="signup-agile">   
       <br><a href="Login.php"><span class="FieldInfo">Already a member? Login Now!</span></a>
 		<br>
 	<form action="User_Registration.php" method="post">
 		
-						
+					
 				<p class="header">Username:</p>
 				<input type="text" Name="Username" placeholder="Your Full Name" value="">
 				
@@ -88,11 +90,16 @@ if(empty($Username)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
 				<input type="password" Name="Password" placeholder="Password" value="">
 				
 				<p class="header">Confirm Password:</p>
-				<input type="password" Name="ConfirmPassword" placeholder="Confirm Password" value="">
+				<input type="password" Name="ConfirmPassword" placeholder="Confirm Password" value="">			
 				
 				<input type="Submit" Name="Submit" value="Register">
+				
+				
 			</form>
-		</div>	  
+		</div>	 
+	
 <p class="copyright">&copy; 2018 stylish sign in and sign up Form. All Rights Reserved </p>
+
+</div>	
 </body>
 </html>
