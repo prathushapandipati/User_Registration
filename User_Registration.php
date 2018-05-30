@@ -5,13 +5,13 @@
 
 <?php
 if(isset($_POST["Submit"])){
-$Username=mysql_real_escape_string($_POST["Username"]);
+$ClubName=mysql_real_escape_string($_POST["ClubName"]);
 $Email=mysql_real_escape_string($_POST["Email"]);
 $Password=mysql_real_escape_string($_POST["Password"]);
 $ConfirmPassword=mysql_real_escape_string($_POST["ConfirmPassword"]);
 $Token=bin2hex(openssl_random_pseudo_bytes(40));
 
-if(empty($Username)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
+if(empty($ClubName)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
 	$_SESSION["message"]="All Fields must be filled out";
 	Redirect_To("User_Registration.php");
 }elseif($Password!==$ConfirmPassword){
@@ -30,11 +30,11 @@ if(empty($Username)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
 	global $ConnectingDB;
 	$Hashed_Password=Password_Encryption($Password);
 	$Query="INSERT INTO admin_panel(username,email,password,token,active)
-	VALUES('$Username','$Email','$Hashed_Password','$Token','OFF')";
+	VALUES('$ClubName','$Email','$Hashed_Password','$Token','OFF')";
 	$Execute=mysql_query($Query);
 	if($Execute){
 				 $subject="Confirm Account";
-				 $body='Hi'.$Username. 'Here is the link to Active your account
+				 $body='Hi'.$ClubName. 'Here is the link to Active your account
 				 http://localhost/PHPCOURSE/User_Registration/Activate.php?token='.$Token;
 				 $SenderEmail="From:prathusha.pandipati@gmail.com";
 	 if (mail($Email, $subject, $body, $SenderEmail)) {
@@ -80,8 +80,8 @@ if(empty($Username)&&empty($Email)&&empty($Password)&&empty($ConfirmPassword)){
 	<form action="User_Registration.php" method="post">
 		
 					
-				<p class="header">Username:</p>
-				<input type="text" Name="Username" placeholder="Your Full Name" value="">
+				<p class="header">Clubname:</p>
+				<input type="text" Name="ClubName" placeholder="Your Full Name" value="">
 				
 				<p class="header">Email:</p>
 				<input type="email" Name="Email" placeholder="Email" value="" >

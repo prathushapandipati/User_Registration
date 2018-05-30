@@ -8,14 +8,19 @@
 		<title>Welcome</title>
 	</head>
 	<body>
-<?php
+
+	   <h1>Welcome to the club </h1>
+	   
+	   <?php
 if(isset($_SESSION["User_Id"])){
-echo "My Id is ".$_SESSION["User_Id"]."  with the name of  ".$_SESSION["User_Name"].
-"  with the email  ".$_SESSION["User_Email"];}
-
-
+	 echo "<strong>"; 
+	 echo " ".$_SESSION["Club_Name"]."<br>";
+	  echo "</strong>"; 
+	 echo "<strong> your email id </strong>  ".$_SESSION["User_Email"] ."<br>";;}
+	
 ?>
-	   <h1>Welcome</h1>
+
+</br>
 	   <a href="Logout.php">Logout Now</a>
 	</body>
 </html>

@@ -22,7 +22,7 @@ else{
 		$admin["username"];
 		$admin["token"];
  $subject="Reset Password";
- $body='Hi ' .$admin["username"]. 'Here is the link to Reset you Password'.'
+ $body='Hi ' .$admin["username"]. '   Here is the link to Reset you Password   '.'
  http://localhost/PHPCOURSE/User_Registration/Reset_Password.php?token='.$admin["token"];
  $SenderEmail="From:prathusha.pandipati@gmail.com";
  if (mail($Email, $subject, $body, $SenderEmail)) {

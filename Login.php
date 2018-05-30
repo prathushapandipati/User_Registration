@@ -14,7 +14,7 @@ if(empty($Email)||empty($Password)){
 	$Found_Account=Login_Attempt($Email,$Password);
 	if($Found_Account){
 		$_SESSION["User_Id"]=$Found_Account['id'];
-		$_SESSION["User_Name"]=$Found_Account['username'];
+		$_SESSION["Club_Name"]=$Found_Account['username'];
 		$_SESSION["User_Email"]=$Found_Account['email'];
 		if(isset($_POST["Remember"])){
 			$ExpireTime=time()+86400;
