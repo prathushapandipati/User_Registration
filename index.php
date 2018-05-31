@@ -11,10 +11,10 @@
     <title>Sport och Idrott</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="indexcss/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="indexcss/custom.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="index.php">
                 	<span class="glyphicon glyphicon-fire"></span> 
                 	Sport och Idrott
                 </a>
@@ -110,7 +110,7 @@
                                         </select>
 
             
-			<select id="country12" onchange="change_country(this.value)" class="frm-field required">
+			<select id="country12" onchange="change_country(this.value)" class="frm-field required" required="" >
 														<option value="null"> Välj Område</option>
 														<option value="city">Stockholm</option>
 														<option value="city">Värmland</option>
